@@ -1,0 +1,17 @@
+name: RiaTools
+version: '${project.version}'
+main: ink.magma.riatools.RiaTools
+api-version: 1.18
+authors: [ MagmaBlock ]
+description: Some tools for RIA Zth
+depend:
+  - Vault
+commands:
+  ria:
+    aliases:
+      - "zth"
+    usage: "/ria"
+    description: "RIATools"
+  drop:
+    usage: "/drop"
+    description: "disable / enable drop"

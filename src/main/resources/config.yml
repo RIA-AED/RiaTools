@@ -1,0 +1,11 @@
+dragon-egg:
+  pickup-message: true
+  fall-into-void-message: true
+composter:
+  custom: true
+luck-command:
+  list:
+    example:
+      - '/say 123'
+      - '/say 456'
+      - '/say 123'
