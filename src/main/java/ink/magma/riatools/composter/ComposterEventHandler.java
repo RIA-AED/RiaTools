@@ -11,7 +11,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 
 public class ComposterEventHandler implements Listener {
     @EventHandler
@@ -22,15 +21,14 @@ public class ComposterEventHandler implements Listener {
             return;
         }
         Player player = event.getPlayer();
-        PlayerInventory playerInv = player.getInventory();
         ItemStack handItem = event.getItem();
         Block clicked = event.getClickedBlock();
         World world = clicked.getWorld();
 
         // 如果玩家主手对着堆肥桶使用腐肉或蜘蛛眼
         if (clicked.getType() == Material.COMPOSTER
-                && event.getAction() == Action.RIGHT_CLICK_BLOCK
-                && handItem != null) {
+            && event.getAction() == Action.RIGHT_CLICK_BLOCK
+            && handItem != null) {
             if (handItem.getType() == Material.ROTTEN_FLESH || handItem.getType() == Material.SPIDER_EYE) {
                 Levelled clickedBlockLevel = (Levelled) clicked.getBlockData(); // 堆肥桶有多少层
                 int newClickBlockLevel = clickedBlockLevel.getLevel() + 1; // 下一层
